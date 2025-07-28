@@ -9,11 +9,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors({
-  origin: "http://localhost:3000",   // allow Next.js dev server
-  methods: "GET,POST",
-  credentials: true
-}));
+app.use(cors({ origin: "*" }));
+
 app.use(express.json());
 
 app.get("/", (req, res) => res.send("✅ Bitbucket Analytics Backend Running"));
